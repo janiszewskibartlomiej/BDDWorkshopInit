@@ -17,3 +17,53 @@ paths:
       responses:
         200:
           description: "hello, world"
+
+  /feed:
+    get:
+      operationId: "tweets.get"
+      responses:
+        200:
+          description: "Feed"
+    post:
+      operationId: "tweets.add"
+      responses:
+        200:
+          description: "Add a tweet"
+      consumes:
+        - application/json
+      parameters:
+        - name: "tweet"
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - tweet
+            properties:
+              tweet:
+                type: string
+
+  /followed/{following}/{followed}:
+    put:
+      operationId: "followed.follow"
+      parameters:
+        - name: "following"
+          in: path
+          required: true
+          type: string
+          format: path
+        - name: "followed"
+          in: path
+          required: true
+          type: string
+          format: path
+      responses:
+        200:
+          description: "follow a user"
+
+  /followed:
+    delete:
+      operationId: "followed.delete_all"
+      responses:
+        200:
+          description: "Remove all followed"

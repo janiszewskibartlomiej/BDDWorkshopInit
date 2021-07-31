@@ -93,3 +93,8 @@ Feature: The workshop website should contain correct data # features/scenario.fe
   "Hello": "World"
 }
 ``` 
+
+
+materialy >> https://www.mikulskibartosz.name/bdd-pl
+
+rozwiazanie > https://github.com/mikulskibartosz/BDDWorkshopInit/tree/solution
